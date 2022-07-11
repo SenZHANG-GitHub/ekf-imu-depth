@@ -2,7 +2,7 @@
 
 This is the official PyTorch implementation for **[Towards Scale-Aware, Robust, and Generalizable Unsupervised Monocular Depth Estimation by Integrating IMU Motion Dynamics], ECCV2022**
 
-If you find this work useful in your research please consider citing our paper:
+If you find this work useful in your research, please consider citing our paper:
 ```
 @inproceedings{zhang2022towards,
   title={Towards Scale-Aware, Robust, and Generalizable Unsupervised Monocular Depth Estimation by Integrating IMU Motion Dynamics},
