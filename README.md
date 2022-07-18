@@ -4,13 +4,11 @@ This is the official PyTorch implementation for **[Towards Scale-Aware, Robust, 
 
 If you find this work useful in your research, please consider citing our paper:
 ```
-@misc{zhang2022scaleaware,
-    title={Towards Scale-Aware, Robust, and Generalizable Unsupervised Monocular Depth Estimation by Integrating IMU Motion Dynamics},
-    author={Sen Zhang and Jing Zhang and Dacheng Tao},
-    year={2022},
-    eprint={2207.04680},
-    archivePrefix={arXiv},
-    primaryClass={cs.CV}
+@article{zhang2022towards,
+  title={Towards Scale-Aware, Robust, and Generalizable Unsupervised Monocular Depth Estimation by Integrating IMU Motion Dynamics},
+  author={Zhang, Sen and Zhang, Jing and Tao, Dacheng},
+  journal={arXiv preprint arXiv:2207.04680},
+  year={2022}
 }
 
 ```
