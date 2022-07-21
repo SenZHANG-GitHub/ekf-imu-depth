@@ -57,4 +57,4 @@ To evaluate the models on Make3D, use ```evaluate_make3d.py``` with the same arg
 
 
 ## Acknowledgment
-This repo is built upon the excellent works of [monodepth2](https://github.com/nianticlabs/monodepth2), [deep_ekf_vio](https://https://github.com/lichunshang/deep_ekf_vio), and [liegroups](https://github.com/utiasSTARS/liegroups). The borrowed codes are licensed under their original license respectively.
+This repo is built upon the excellent works of [monodepth2](https://github.com/nianticlabs/monodepth2), [deep_ekf_vio](https://github.com/lichunshang/deep_ekf_vio), and [liegroups](https://github.com/utiasSTARS/liegroups). The borrowed codes are licensed under their original license respectively.
