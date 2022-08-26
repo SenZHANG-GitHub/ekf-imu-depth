@@ -25,7 +25,11 @@ If you find this work useful in your research, please consider citing our paper:
 
 ## Training
 
-This codebase is developed under PyTorch-1.4.0, CUDA-10.0, and Ubuntu-18.04.1. You can train our full model with:
+This codebase is developed under PyTorch-1.4.0, CUDA-10.0, and Ubuntu-18.04.1. 
+
+You can get the matched imu files using ```match_kitti_imu.py``` (Please check and modify the filepath inside this script)
+
+You can train our full model with:
 
 ```shell
 python train.py --data_path YOUR_PATH_TO_DATA --use_ekf --num_layers 50
