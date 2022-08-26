@@ -1,13 +1,3 @@
-"""
-+ match_odom() can be obtained in Sen's VINET at github
-+ download odometry dataset from kitti odometry leaderboard: ```data/kitti/odometry/dataset```
-    + download sync datasets for sequences ```00,01,02,04,05,06,07,08,09,10```
-        + move the folders ```image_02``` and ```oxts``` into (e.g. ```data/kitti/odometry/dataset/sync/00/```)
-        + contains folders ```image_02``` and ```oxts```
-    + download unsync datasets for sequences ```00,01,02,04,05,06,07,08,09,10```
-        + move ```oxts``` into (e.g. ```data/kitti/odometry/dataset/raw_oxts/00/```)
-        + contains folder ```data``` and ```dataformat.txt``` and ```timestamps.txt```
-"""
 import os
 import shutil
 import PIL
