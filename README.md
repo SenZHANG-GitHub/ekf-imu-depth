@@ -4,13 +4,14 @@ This is the official PyTorch implementation for **[Towards Scale-Aware, Robust, 
 
 If you find this work useful in your research, please consider citing our paper:
 ```
-@article{zhang2022towards,
-  title={Towards Scale-Aware, Robust, and Generalizable Unsupervised Monocular Depth Estimation by Integrating IMU Motion Dynamics},
+@inproceedings{zhang2022towards,
+  title={Towards scale-aware, robust, and generalizable unsupervised monocular depth estimation by integrating IMU motion dynamics},
   author={Zhang, Sen and Zhang, Jing and Tao, Dacheng},
-  journal={arXiv preprint arXiv:2207.04680},
-  year={2022}
+  booktitle={European Conference on Computer Vision},
+  pages={143--160},
+  year={2022},
+  organization={Springer}
 }
-
 ```
 
 ## Method Overview
@@ -23,11 +24,29 @@ If you find this work useful in your research, please consider citing our paper:
 ## Generalization on Make3D
 ![](assets/result_3.png)
 
+## Data Preparation
+
+1. Download both the raw (unsync) and the sync kitti datasets from https://www.cvlibs.net/datasets/kitti/raw_data.php. For each sequence, you will have two folders ```XXX_extract/``` and ```XXX_sync```, e.g. ```2011_10_03/2011_10_03_drive_0042_extract``` and ```2011_10_03/2011_10_03_drive_0042_sync```
+2. The experiments are performed using the data from the sync kitti dataset (```XXX_sync/```). Since the imu (```oxt/```) in the sync dataset is sampled at the same frequency of the images, we need to perform a matching preprocessing step using the imu data in the raw dataset to get the corresponding imu data at the original frequency. 
+
+* You can achieve this by using ```python match_kitti_imu.py```
+* What you need to do: (1) Modify ```line 71-76``` to get the sequence names of your own setting (2) Modify ```line 89-90``` to your own path to the raw and the sycn datasets
+* The matched results will be saved in ```matched_oxts\``` under each sequence folder ```XXX_sync```
+* A 5ms drift is allowed for current matching process. You can modify ```line 153``` if you are not happy about this setting
+* Note that we directly match the imu data using the timestamps, while ignoring potential time asynchronization between the imu and the camera timing systems. 
+
+3. For the image preprocessing, we follow the practice in https://github.com/nianticlabs/monodepth2 to convert the image format from png to jpg for a smaller image size:
+
+```
+find kitti_data/ -name '*.png' | parallel 'convert -quality 92 -sampling-factor 2x2,1x1,1x1 {.}.png {.}.jpg && rm {}'
+```
+
+4. Since I only did preprocessing once at the beginning of this project, please remind me by raising a new issue if I miss anything here
+
+
 ## Training
 
 This codebase is developed under PyTorch-1.4.0, CUDA-10.0, and Ubuntu-18.04.1. 
-
-You can get the matched imu files using ```match_kitti_imu.py``` (Please check and modify the filepath inside this script)
 
 You can train our full model with:
 
@@ -58,6 +77,13 @@ For evaluation without post processing, simply remove ```--post_process```.
 To evaluate the models with ResNet-18 backbone, change ```--num_layer``` to ```18```ccordingly.
 
 To evaluate the models on Make3D, use ```evaluate_make3d.py``` with the same arguments as ```evaluate_depth.py```. But you need to change the variable ```main_path``` in ```read_make3d()``` to your own path that contains test images of Make3D.
+
+## Our pretrained model
+The full pretrained models corresponding to the results in our ECCV paper can be downloaded from the following links:
+
+DynaDepth R18: https://pan.baidu.com/s/1ksP2m-6rQ_PkBTLmjAAuLQ  pwd:xc5h
+
+DynaDepth R50: https://pan.baidu.com/s/1X7OAOKFZ4fw3crOx6bn4ZA  pwd:c3kj
 
 
 ## Acknowledgment
