@@ -35,7 +35,7 @@ If you find this work useful in your research, please consider citing our paper:
 * A 5ms drift is allowed for current matching process. You can modify ```line 153``` if you are not happy about this setting
 * Note that we directly match the imu data using the timestamps, while ignoring potential time asynchronization between the imu and the camera timing systems. 
 
-3. Since the unsync dataset is quite large to download, here our preprocessed imu files are also provided in the following link: https://pan.baidu.com/s/1971KrQEHw5kVRy_Y4Lj5FA  pwd:80pz
+3. Since the unsync dataset is quite large to download, we also provide our preprocessed imu files in the following link: https://pan.baidu.com/s/1971KrQEHw5kVRy_Y4Lj5FA  pwd:80pz
 
 4. For the image preprocessing, we follow the practice in https://github.com/nianticlabs/monodepth2 to convert the image format from png to jpg for a smaller image size:
 
@@ -43,7 +43,7 @@ If you find this work useful in your research, please consider citing our paper:
 find kitti_data/ -name '*.png' | parallel 'convert -quality 92 -sampling-factor 2x2,1x1,1x1 {.}.png {.}.jpg && rm {}'
 ```
 
-4. Since I only did preprocessing once at the beginning of this project, please remind me by raising a new issue if I miss anything here
+5. Since I only did preprocessing for once at the beginning of this project, please remind me by raising a new issue if I miss anything here
 
 
 ## Training
