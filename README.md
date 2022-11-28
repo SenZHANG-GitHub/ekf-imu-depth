@@ -80,7 +80,7 @@ To evaluate the models with ResNet-18 backbone, change ```--num_layer``` to ```1
 
 To evaluate the models on Make3D, use ```evaluate_make3d.py``` with the same arguments as ```evaluate_depth.py```. But you need to change the variable ```main_path``` in ```read_make3d()``` to your own path that contains test images of Make3D.
 
-## Our pretrained model
+## Our pretrained models
 The full pretrained models corresponding to the results in our ECCV paper can be downloaded from the following links:
 
 DynaDepth R18: https://pan.baidu.com/s/1ksP2m-6rQ_PkBTLmjAAuLQ  pwd:xc5h
