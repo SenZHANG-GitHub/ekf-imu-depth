@@ -43,6 +43,5 @@ class GravityDecoder(nn.Module):
 
         # [B, 1, 1, 3] -> [B, 3]
         gravity = 0.01 * out.view(-1, self.num_frames_to_predict_for, 1, 3)
-        gravity = gravity.squeeze()
 
-        return gravity
+        return gravity[:,0,0,:]

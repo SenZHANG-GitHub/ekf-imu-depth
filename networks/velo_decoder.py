@@ -43,6 +43,5 @@ class VeloDecoder(nn.Module):
 
         # [B, 1, 1, 3] -> [B, 3]
         velocity = 0.01 * out.view(-1, self.num_frames_to_predict_for, 1, 3)
-        velocity = velocity.squeeze()
         
-        return velocity
+        return velocity[:,0,0,:] 
