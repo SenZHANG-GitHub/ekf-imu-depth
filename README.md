@@ -76,7 +76,7 @@ By default, we report the learnt scale without the median scaling trick. Use ```
 
 For evaluation without post processing, simply remove ```--post_process```. 
 
-To evaluate the models with ResNet-18 backbone, change ```--num_layer``` to ```18```ccordingly.
+To evaluate the models with ResNet-18 backbone, change ```--num_layer``` to ```18``` accordingly.
 
 To evaluate the models on Make3D, use ```evaluate_make3d.py``` with the same arguments as ```evaluate_depth.py```. But you need to change the variable ```main_path``` in ```read_make3d()``` to your own path that contains test images of Make3D.
 
