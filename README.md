@@ -72,7 +72,7 @@ You can evaluate on the KITTI test set with:
 python evaluate_depth.py --num_layer 50 --load_weights_folder YOUR_PATH_TO_MODEL_WEIGHTS --post_process
 ```
 
-By default, we report the learnt scale without the median scaling trick. Use ```--eval_mono``` if you want to test the performance with edian scaling
+By default, we report the learnt scale without the median scaling trick. Use ```--eval_mono``` if you want to test the performance with median scaling
 
 For evaluation without post processing, simply remove ```--post_process```. 
 
